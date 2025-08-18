@@ -102,15 +102,29 @@ body {
 .foot a:hover,
 .foot a:focus {
   text-decoration: underline;
-  color: #38ef7d; /* green accent on hover */
+  color: #38ef7d;
 }
 
-/* Header (Careers button) */
 .site-header {
   position: fixed;
   top: 1rem;
+  left: 1rem;
   right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 10;
+}
+
+/* Logo */
+.logo {
+  height: 25px;
+  width: auto;
+  display: block;
+}
+
+.logo-link {
+  display: inline-block;
 }
 
 .careers-btn {
