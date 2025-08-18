@@ -7,19 +7,24 @@ body {
   height: 100%;
   margin: 0;
 }
-
 body {
   display: grid;
   place-items: center;
-  background: linear-gradient(-45deg, #0f9b0f, #38ef7d, #56ccf2, #2f80ed);
+  background: linear-gradient(-45deg, #0f9b0f, #38ef7d, #11998e, #38ef7d);
   background-size: 400% 400%;
-  animation: gradientShift 45s ease-in-out infinite; /* slow & subtle */
-  color: #fff; /* white text for contrast */
+  animation: gradientShift 45s ease-in-out infinite;
+  color: #fff;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.45;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.brand,
+.tagline,
+.sub {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle depth */
 }
 
 /* Gradient animation keyframes */
@@ -72,13 +77,21 @@ body {
   opacity: 0.9;
 }
 
-/* Accessibility: focus visible for any interactive elements */
-:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 2px;
+.foot a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.25rem;
+  transition: color 0.3s ease;
 }
 
-/* Header container */
+.foot a:hover,
+.foot a:focus {
+  text-decoration: underline;
+  color: #38ef7d; /* green accent on hover */
+}
+
+/* Header (Careers button) */
 .site-header {
   position: fixed;
   top: 1rem;
@@ -86,13 +99,12 @@ body {
   z-index: 10;
 }
 
-/* Careers button */
 .careers-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid #fff;
-  border-radius: 999px; /* fully rounded corners */
+  border-radius: 999px;
   color: #fff;
   font-weight: 600;
   text-decoration: none;
@@ -103,5 +115,41 @@ body {
 .careers-btn:hover,
 .careers-btn:focus {
   background: #fff;
-  color: #2f80ed; /* blue highlight on hover */
+  color: #0f9b0f; /* solid green highlight on hover */
+}
+
+/* Accessibility: focus visible */
+:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.products {
+  margin-top: 2rem;
+}
+
+.products-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.products-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.products-links a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.products-title .icon {
+  margin-right: 0.4rem;
 }
