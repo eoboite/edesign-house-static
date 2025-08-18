@@ -10,14 +10,29 @@ body {
 
 body {
   display: grid;
-  place-items: center; /* center content both axes */
-  background: #ffd300; /* bold, memorable backdrop */
-  color: #000; /* high contrast for accessibility */
+  place-items: center;
+  background: linear-gradient(-45deg, #0f9b0f, #38ef7d, #56ccf2, #2f80ed);
+  background-size: 400% 400%;
+  animation: gradientShift 45s ease-in-out infinite; /* slow & subtle */
+  color: #fff; /* white text for contrast */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.45;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .wrap {
@@ -54,11 +69,39 @@ body {
   right: 0;
   text-align: center;
   font-size: 0.9rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
-/* Accessibility: focus visible if links/buttons are added later */
+/* Accessibility: focus visible for any interactive elements */
 :focus-visible {
-  outline: 3px solid #000;
+  outline: 3px solid #fff;
   outline-offset: 2px;
+}
+
+/* Header container */
+.site-header {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+/* Careers button */
+.careers-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  border-radius: 999px; /* fully rounded corners */
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.careers-btn:hover,
+.careers-btn:focus {
+  background: #fff;
+  color: #2f80ed; /* blue highlight on hover */
 }
