@@ -1,0 +1,64 @@
+/* Base reset + layout */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center; /* center content both axes */
+  background: #ffd300; /* bold, memorable backdrop */
+  color: #000; /* high contrast for accessibility */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.45;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 760px;
+}
+
+.brand {
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 5vw + 1rem, 4.25rem);
+}
+
+.tagline {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1.2vw + 0.9rem, 1.5rem);
+}
+
+.sub {
+  margin: 0 auto;
+  max-width: 56ch;
+  font-size: clamp(1rem, 0.9vw + 0.85rem, 1.15rem);
+  opacity: 0.95;
+}
+
+.foot {
+  position: fixed;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Accessibility: focus visible if links/buttons are added later */
+:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
