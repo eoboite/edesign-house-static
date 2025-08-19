@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://edesignhouse.com/sitemap.xml
