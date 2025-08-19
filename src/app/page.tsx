@@ -1,9 +1,10 @@
 export default function Home() {
+
   const year = new Date().getFullYear();
 
   return (
-    <main>
-      <header className="header">
+    <>
+      <header className="site-header">
         <a
           href="/"
           className="logo-link"
@@ -20,51 +21,36 @@ export default function Home() {
             href="https://jobs.gusto.com/boards/edesign-house-c250e020-e0dd-401a-b1eb-e7bac6ada5b9"
             className="careers-btn"
             title="Careers at eDesign House"
+            target="_blank"
+            rel="noopener"
           >
             Careers
           </a>
         </nav>
       </header>
-
-      <section className="hero">
-        <h1>eDesign House</h1>
-        <p className="sub">
-          We are a software-driven company building secure, scalable
-          technologies that power government, enterprise, and everyday people.
-          From e-commerce to events and mission solutions, we connect people
-          through modern software.
-        </p>
+      <main role="main"
+        className="wrap">
+        <h1 className="brand">eDesign House</h1>
+        <p className="tagline">Engineering trust. Empowering progress.</p>
+        <p className="sub">We are a software-driven company building secure, scalable technologies that power government, enterprise, and everyday people. From e-commerce to events and mission solutions, we connect people through modern software.</p>
 
         <div className="products">
-          <h2>
-            🌴 What We’ve Built
+          <h2 className="products-title">
+            <span className="icon">🌴</span> What We’ve Built
           </h2>
-          <ul>
-            <li>
-              <a
-                href="https://shoejunkyz.com"
-                title="Shoe Junkyz App — Sneakers and Streetwear Marketplace"
-                className="chalk-underline"
-              >
-                Shoe Junkyz
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://popupshop.app"
-                title="POP-UP SHOP App — Discover and Share Pop-Up Events"
-                className="chalk-underline"
-              >
-                POP-UP SHOP
-              </a>
-            </li>
-          </ul>
+          <div className="products-links">
+            <a href="https://shoejunkyz.com"
+              target="_blank"
+              title="Shoe Junkyz – Sneaker marketplace and community app"
+              rel="noopener">Shoe Junkyz</a>
+            <a href="https://popupshop.app"
+              target="_blank"
+              title="POP-UP SHOP – Discover and share local events instantly"
+              rel="noopener">POP-UP SHOP</a>
+          </div>
         </div>
-      </section>
-
-      <footer>
-        <p>&copy; {year} eDesign House. All rights reserved.</p>
-      </footer>
-    </main>
+      </main>
+      <footer className="foot">© <span id="year">{year}</span> eDesign House · Washington, DC </footer>
+    </>
   );
 }

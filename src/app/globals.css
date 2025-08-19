@@ -1,8 +1,11 @@
-/* Reset */
+/* Base reset + layout */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -21,12 +24,10 @@ body {
   animation: blackGrayFlash 40s ease-in-out infinite;
   color: #fff;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.5;
-  min-height: 100vh;
+  line-height: 1.45;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 1rem;
 }
 
 @keyframes blackGrayFlash {
@@ -47,92 +48,169 @@ body {
   }
 }
 
-header {
+.brand,
+.tagline,
+.sub {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle depth */
+}
+
+.wrap {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 760px;
+}
+
+.brand {
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-size: clamp(2.25rem, 5vw + 1rem, 4.25rem);
+}
+
+.tagline {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1.2vw + 0.9rem, 1.5rem);
+}
+
+.sub {
+  margin: 0 auto;
+  max-width: 56ch;
+  font-size: clamp(1rem, 0.9vw + 0.85rem, 1.15rem);
+  opacity: 0.95;
+}
+
+.foot {
+  position: fixed;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.foot a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.foot a:hover,
+.foot a:focus {
+  text-decoration: underline;
+  color: #38ef7d;
+}
+
+.site-header {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 2rem;
+  z-index: 10;
 }
 
+/* Logo */
 .logo {
-  width: 48px;
-  height: auto;
+  height: 25px;
+  width: auto;
+  display: block;
 }
 
-.logo .black {
-  filter: invert(1); /* make SVG white if black */
+.logo-link {
+  display: inline-block;
 }
 
 .careers-btn {
-  background: #fff;
-  color: #000;
+  display: inline-block;
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  border-radius: 999px;
+  color: #fff;
   font-weight: 600;
-  transition: background 0.2s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
-.careers-btn:hover {
-  background: #ddd;
+.careers-btn:hover,
+.careers-btn:focus {
+  background: #fff;
+  color: #0f9b0f; /* solid green highlight on hover */
 }
 
-.hero {
-  text-align: center;
-  max-width: 800px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.hero .sub {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+/* Accessibility: focus visible */
+:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
 }
 
 .products {
   margin-top: 2rem;
 }
 
-.products h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.products-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
 }
-
-.products ul {
-  list-style: none;
+/* 
+.products-links {
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
 }
 
-.products a {
+.products-links a {
   color: #fff;
-  text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+} */
+
+.products-links a {
   position: relative;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 }
 
-.chalk-underline::after {
+.products-links a::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -4px;
-  height: 8px;
-  background: white;
-  border-radius: 50% / 100%;
-  transform: rotate(-2deg);
-  opacity: 0.7;
+  left: 10%;
+  bottom: -6px; /* push slightly lower */
+  width: 80%;
+  height: 6px;
+  border-top: 3px solid #fff; /* use top border instead of bottom */
+  border-radius: 50%; /* creates the arc */
+  transform: rotate(2deg); /* slight tilt */
+  opacity: 0.85;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-footer {
-  margin-top: 4rem;
-  font-size: 0.875rem;
-  opacity: 0.8;
+.products-links a:hover::after,
+.products-links a:focus::after {
+  border-top-color: #38ef7d; /* green accent on hover */
+  transform: rotate(-2deg) scaleX(1.05);
+}
+
+.products-title .icon {
+  margin-right: 0.4rem;
 }

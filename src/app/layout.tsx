@@ -2,12 +2,12 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "eDesign House — Secure Software & Cloud Solutions",
+  title: "eDesign House — Secure Software & Cloud Solutions for Government, Enterprise, and Communities",
   description:
     "We are a software-driven company building secure, scalable technologies that power government, enterprise, and everyday people. From e-commerce to events and mission solutions, we connect people through modern software.",
   metadataBase: new URL("https://edesignhouse.com"),
   openGraph: {
-    title: "eDesign House — Secure Software & Cloud Solutions",
+    title: "eDesign House — Secure Software & Cloud Solutions for Government, Enterprise, and Communities",
     description:
       "Secure, scalable software and cloud solutions for government and enterprise. Washington, DC.",
     url: "https://edesignhouse.com",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "eDesign House — Secure Software & Cloud Solutions",
+    title: "eDesign House — Secure Software & Cloud Solutions for Government, Enterprise, and Communities",
     description:
       "Secure, scalable software and cloud solutions for government and enterprise. Washington, DC.",
     images: ["/imgs/og-image.jpg"]
