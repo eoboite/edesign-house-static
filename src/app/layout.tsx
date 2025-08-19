@@ -30,7 +30,6 @@ export const metadata: Metadata = {
       "Secure, scalable software and cloud solutions for government and enterprise. Washington, DC.",
     images: ["/imgs/og-image.jpg"]
   },
-  themeColor: "#000000",
   icons: {
     icon: [
       { url: "/imgs/favicon.ico" },

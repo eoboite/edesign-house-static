@@ -59,6 +59,9 @@ header {
 .logo {
   width: 48px;
   height: auto;
+}
+
+.logo .black {
   filter: invert(1); /* make SVG white if black */
 }
 
