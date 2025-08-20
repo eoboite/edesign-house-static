@@ -17,6 +17,8 @@ export default function Home() {
             src="/imgs/logo.svg"
             alt="eDesign House Logo"
             className="logo"
+            width={43}
+            height={30}
           />
         </Link>
         <nav>
